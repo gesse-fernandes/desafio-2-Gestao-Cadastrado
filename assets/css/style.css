@@ -1,0 +1,24 @@
+
+body{
+    background-color: #000;
+}
+table td, th {
+    width: 25%;
+}
+
+ table thead {
+    background-color: #fff;
+}
+
+ table thead tr th {
+    font-weight: 500;
+}
+
+ table tbody {
+    text-align: center;
+    font-weight: 300;
+    background-color: #292929;
+}
+td{
+    color: #fff;
+}

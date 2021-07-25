@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Desafio #2 Gama Academy Gestão de cadastro</title>
+</head>
+<body>
+    <section class="my-5 ">
+        <div class="container ">
+            <h2 class="h1-responsive font-weight-bold text-center my-5 text-white ">Cadastro de Gestão de Clientes e Produtos</h2>
+            <p class="text-center w-responsive mx-auto pb-5 text-white ">Adicione as Informações dos Clientes e Produtos</p>
+        </div>
+        <div class="row justify-content-center align-items-center ">
+            <div class="col-lg-5 mb-lg-0 mb-4 ">
+                <p class="text-white text-center">Cadastro de Cliente <i class="fa fa-user"></i></p>
+                <div class="card ">
+                    <div class="card-body ">
+                        <form action="#" method="POST" id="form">
+                        <div class="input-group mb-3 ">
+                            <input type="text" class="form-control" name="name" id="nome" placeholder="Nome.... " required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-user "></i></span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3 ">
+                            <input type="text" class="form-control " onblur="validaCpf(this)" name="cpf" id="cpf" placeholder="CPF.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-user "></i></span>
+                            </div>
+                        </div>
+                         <div class="input-group mb-3 ">
+                            <input type="text" class="form-control " name="telefone " id="telefone" placeholder="Telefone.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-phone "></i></span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3 ">
+                            <input type="email" class="form-control " name="email" id="email" placeholder="Email.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-envelope "></i></span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3 ">
+                            <input type="text" class="form-control" name="cep" id="cep" onblur="apiCep(this.value)" placeholder="CEP.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-map-marker "></i></span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3 ">
+                            <input type="text" class="form-control" name="logradouro " id="logradouro" placeholder="Logradouro.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-address-book-o "></i></span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3 ">
+                            <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-address-book-o "></i></span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3 ">
+                            <input type="text" class="form-control " name="cidade" id="cidade" placeholder="Cidade.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-address-book-o "></i></span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3 ">
+                            <input type="text" class="form-control " name="uf" id="uf" placeholder="Estado.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-address-book-o "></i></span>
+                            </div>
+                        </div>
+                        <div class="col-4 ">
+                            <button type="submit" class="btn btn-success btn-block ">Cadastrar</button>
+                            </form>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 mb-lg-0 mb-4 ">
+                <p class="text-white text-center">Cadastro de Produtos <i class="fa fa-product-hunt"></i></p>
+                <div class="card ">
+                    <div class="card-body ">
+                        <form action="#" method="POST" enctype="multipart/form-data" id="formProduct">
+                            <div class="input-group mb-3 ">
+                            <input type="number" class="form-control" name="codigo" id="codigo" placeholder="Codigo do Produto.... " required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-user "></i></span>
+                            </div>
+                        </div>
+                            <div class="input-group mb-3 ">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Nome do produto.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-user "></i></span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3 ">
+                            <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Descrição do produto.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-user "></i></span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3 ">
+                            <input type="number" class="form-control" name="qtd" id="qtd" placeholder="Quantidade de estoque.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-sort-amount-desc"></i></span>
+                            </div>
+                        </div>
+                         <div class="input-group mb-3 ">
+                            <input type="text" class="form-control" name="categoria" id="categoria" placeholder="Categoria do produto.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-sort-amount-desc"></i></span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3 ">
+                            <input type="number" class="form-control" name="preco" id="preco" placeholder="Preço do produto.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-tag "></i></span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3 ">
+                            <input type="number" class="form-control" name="desconto" id="desconto" placeholder="Preço de desconto do produto.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-tag "></i></span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3 ">
+                            <input type="date" class="form-control" name="validade" id="validade" placeholder="Data de Validade.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-calendar "></i></span>
+                            </div>
+                        </div>
+                         <div class="input-group mb-3 ">
+                            <input type="file" class="form-control" name="imagem" id="imagem" placeholder="Imagem produto.... "required>
+                            <div class="input-group-append ">
+                                <span class="input-group-text "><i class="fa fa-file "></i></span>
+                            </div>
+                        </div>
+                        
+                        <div class="col-4 ">
+                            <button type="submit " class="btn btn-danger btn-block " >Cadastrar</button>
+                        </fom>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h3 class="text-center text-success">Clientes Cadastrados</h3>
+            <br>
+            <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Cep</th>
+                    <th scope="col">Logradouro</th>
+                    <th scope="col">Bairro</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">UF</th>
+                </tr>
+            </thead>
+            <tbody id="clientes">
+
+            </tbody>
+        </table>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h3 class="text-center text-primary">Produtos Cadastrados</h3>
+            <br>
+            <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Desconto</th>
+                    <th scope="col">Validade</th>
+                    <th scope="col">Imagem</th>
+                </tr>
+            </thead>
+            <tbody id="produtos">
+                   
+            </tbody>
+        </table>
+        </div>
+    </section>
+    <footer class="text-center mt-5 pt-5 pb-5 text-lg-start footer " style="margin: 30px;">
+        <div class="container ">
+            
+                <p class="text-center text-white">&copy; 2021 Todos os Direitos Reservados</p>
+            
+        </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
